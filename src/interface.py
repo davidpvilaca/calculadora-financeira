@@ -30,6 +30,20 @@ class Interface():
         break
     return selected
   
+  def getInputNumber(self, name):
+    error = ''
+    while 1:
+      os.system('cls')
+      if (len(error) > 0):
+        print(error)
+      i = input('\n\t%s=' %(name))
+      try:
+        i = float(i)
+        os.system('cls')
+        return i
+      except ValueError:
+        error = 'Por favor insira um número! (Ex: 2 ou 3.14)'
+
   def getSelected(self, selected):
     for i in range(len(self._options)):
       option = self._options[i]

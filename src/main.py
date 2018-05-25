@@ -1,20 +1,26 @@
 #!/usr/bin/python3
 
-import os
 import interface
 import juros
 import descontos
 
 def main():
 
+  ############################
+  # INTERFACE VISUAL DO MAIN #
+  ############################
   mainMenu = interface.Interface()
+  # Opções de menu
   mainMenu.setOptions([
     ('1 - Juros - Calculadora de juros', 'juros', 1),
     ('2 - Descontos - Calculadora de descontos', 'descontos', 2),
     ('0 - Sair', 'sair', 0)
   ])
+  # Título
   mainMenu.setTitle('MENU PRINCIPAL')
 
+  # Loop infinito para escolha de opções
+  # até que a opção de sair seja escolhida
   while 1:
     selected = mainMenu.getInputOption()
     # Sair
@@ -27,7 +33,6 @@ def main():
     if (selected == 2):
       descontos.descontos()
 
-  os.system('pause')
   return 0
 
 if __name__ == '__main__':
