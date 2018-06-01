@@ -3,6 +3,11 @@
 import interface
 import juros
 import descontos
+import time
+
+def error():
+  print('\n\tOCORREU UM ERRO DE DIVISÃO POR 0\n\t VOLTANDO AO MENU PRINCIPAL...\n')
+  time.sleep(3)
 
 def main():
 
@@ -28,10 +33,17 @@ def main():
       break
     # Juros
     if (selected == 1):
-      juros.juros()
+      try:
+        juros.juros()
+      except Exception:
+        error()
+        
     # Descontos
     if (selected == 2):
-      descontos.descontos()
+      try:
+        descontos.descontos()
+      except Exception:
+        error()
 
   return 0
 
