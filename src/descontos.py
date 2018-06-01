@@ -171,7 +171,7 @@ def descontos():
     ('2 - Comercial', 'Calcular desconto comerciais', 2),
     ('0 - Voltar', 'voltar', 0)
   ])
-  descontosMenu.setTitle('DESCONTOS')
+  descontosMenu.setTitle('DESCONTOS SIMPLES')
 
   while 1:
     selected = descontosMenu.getInputOption()
