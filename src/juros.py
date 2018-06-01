@@ -106,7 +106,7 @@ def composto():
   # Função para exibir na tela as variáveis depois
   # dos cálculos
   def printVariables(m, c, i, t, j):
-    print('\n\tM = R${0:.{1}f}'.format(j+c, 2))
+    print('\n\tM = R${0:.{1}f}'.format(m, 2))
     print('\tC = R${0:.{1}f}'.format(c, 2))
     print('\ti = {0:.{1}f}%'.format(i*100, 0 if int(i*100) == i*100 else 2))
     print('\tt = {0:.{1}f}'.format(t, 0 if int(t) == t else 2))
@@ -118,16 +118,16 @@ def composto():
   def getVariables(m, c, i, t, j):
     _m, _c, _i , _t, _j = None, None, None, None, None
     if (m):
-      _m = jurosSimplesMenu.getInputNumber('(Montante R$) M')
+      _m = jurosCompostosMenu.getInputNumber('(Montante R$) M')
     if (c):
-      _c = jurosSimplesMenu.getInputNumber('(Capital inicial R$) C')
+      _c = jurosCompostosMenu.getInputNumber('(Capital inicial R$) C')
     if (i):
-      _i = jurosSimplesMenu.getInputNumber('(Taxa %) i')
+      _i = jurosCompostosMenu.getInputNumber('(Taxa %) i')
       _i = _i/100
     if (t):
-      _t = jurosSimplesMenu.getInputNumber('(Tempo) t')
+      _t = jurosCompostosMenu.getInputNumber('(Tempo) t')
     if (j):
-      _j = jurosSimplesMenu.getInputNumber('(Juros) J')
+      _j = jurosCompostosMenu.getInputNumber('(Juros) J')
     return _m, _c, _i, _t, _j
   
   # Função para realizar o cálculo da fórmula de juros simples
@@ -148,9 +148,9 @@ def composto():
   #######################################
   # INTERFACE VISUAL DE JUROS COMPOSTOS #
   #######################################
-  jurosSimplesMenu = interface.Interface()
+  jurosCompostosMenu = interface.Interface()
   # Opções de menu
-  jurosSimplesMenu.setOptions([
+  jurosCompostosMenu.setOptions([
     ('1 - M - Montante', 'm', 1),
     ('2 - C - Capital inicial', 'c', 2),
     ('3 - i - Taxa fixa', 'i', 3),
@@ -159,11 +159,11 @@ def composto():
     ('0 - Voltar', 'voltar', 0)
   ])
   # Título
-  jurosSimplesMenu.setTitle('JUROS COMPOSTOS\n\n\tO que se deseja obter?')
+  jurosCompostosMenu.setTitle('JUROS COMPOSTOS\n\n\tO que se deseja obter?')
 
   # Obter valores do usuário
   while 1:
-    selected = jurosSimplesMenu.getInputOption()
+    selected = jurosCompostosMenu.getInputOption()
 
     # Voltar
     if (selected == 0):
